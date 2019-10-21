@@ -54,10 +54,22 @@ class GuestbookEntry {
 		this.date = LocalDateTime.now();
 	}
 
+	public GuestbookEntry(String name, String text) {
+
+		Assert.hasText(name, "Name must not be null or empty!");
+		Assert.hasText(text, "Text must not be null or empty!");
+
+		this.name = name;
+		this.text = text;
+		this.date = LocalDateTime.now();
+		this.tag = null;
+	}
+
 	@SuppressWarnings("unused")
 	private GuestbookEntry() {
 		this.name = null;
 		this.text = null;
+		this.tag = null;
 		this.date = null;
 	}
 
