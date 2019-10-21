@@ -33,7 +33,7 @@
 			<div id="entries" class="mx-auto">
 				<div th:each="entry, it : ${entries}" th:with="index = ${it.count}">
 					<div class="card" th:fragment="entry" th:id="entry+${entry.id}">
-						<div class="card-header">
+						<div class="card-header" style="background-color: #F7D358">
 							<form sec:authorize="hasRole('ADMIN')" th:method="delete" th:action="@{/guestbook/{id}(id=${entry.id})}" th:attr="data-entry-id=${entry.id}">
 								<button th:title="#{guestbook.form.delete}" class="btn btn-sm float-right">
 									<span class="fas fa-times"></span>
